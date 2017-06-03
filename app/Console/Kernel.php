@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\Contest\Fetch\Codeforces;
+use App\Console\Commands\Contest\Fetch\Toph;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Codeforces::class
+        Codeforces::class,
+        Toph::class
     ];
 
     /**
@@ -28,6 +30,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('contest:fetch:codeforces -q')->daily();
+        $schedule->command('contest:fetch:toph -q')->daily();
     }
 
     /**

@@ -42,9 +42,9 @@ class Codeforces extends Command
         SaveContest $saveContest
     )
     {
+        parent::__construct();
         $this->processor = $processor;
         $this->saveContest = $saveContest;
-        parent::__construct();
     }
 
 
